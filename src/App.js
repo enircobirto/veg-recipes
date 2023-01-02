@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+const App = ()=>{
+  let headerObj={
+    title:"Enirq's veggie recipes"
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header header={headerObj}/>
+      <RecipeList />
     </div>
-  );
+  )
 }
 
-export default App;
+const Header = ({header}) => {
+  return(
+    <div className="header">
+      {console.log(header)}
+      <h1>{header.title}</h1>
+    </div>
+  )
+}
+
+const RecipeList = ({}) => {
+  const recipeList={
+    0:{
+      title:"kjsdfhc",
+      shortDesc:"sddsdhfdsjdssdffdgdf",
+      icon:"vegan",
+      pic:"ttt.png"
+    }
+  }
+  return(
+    <div className="recipeList">
+      <Recipe recipeInfo={recipeList[0]} />
+    </div>
+  )
+}
+
+const Recipe = ({recipeInfo}) => {
+  let {title,shortDesc,icon,pic} = recipeInfo
+  return(
+    <div className="recipeItem">
+      
+    </div>
+  )
+}
+
+export default App
